@@ -34,13 +34,17 @@ class Main extends Component {
           <div key={post._id} className="card-wrap">
             <span className="pos">
               <LazyLoad offsetVertical={1000} >
-                <img src={post.metadata.image.url} alt="" />
+                <Link to={'/' + post.slug}>
+                  <img src={post.metadata.image.url} alt="" />
+                </Link>
               </LazyLoad>
             </span>
             <div className="card">
               <Link to={'/' + post.slug}> <h2 className="card-title">{post.title}</h2></Link>
-              {post.metadata.snipped && post.metadata.snipped.length < 80 ? <p className="card-body" dangerouslySetInnerHTML={{ __html: post.metadata.snipped }}></p> :
-                <p className="card-body" dangerouslySetInnerHTML={{ __html: post.metadata.snipped && post.metadata.snipped.slice(0, 80) }}></p>
+              {
+                post.metadata.snipped && post.metadata.snipped.length < 80
+                  ? <p className="card-body" dangerouslySetInnerHTML={{ __html: post.metadata.snipped }}></p>
+                  : <p className="card-body" dangerouslySetInnerHTML={{ __html: post.metadata.snipped && post.metadata.snipped.slice(0, 80) }}></p>
               }
               <span className="date">{post.created_at}</span>
 
@@ -71,14 +75,14 @@ class Main extends Component {
                 <Button title={"See more"} />
               </div>
               <LazyLoad offsetVertical={300} >
-                <img className="ads-image" src={this.props.page.metadata ? this.props.page.metadata.image.url : "#"} alt="img" />
+                  <img className="ads-image" src={this.props.page.metadata ? this.props.page.metadata.image.url : "#"} alt="img" />
               </LazyLoad>
             </div>
             :
             <p>No page</p>
         }
         <div>
-          {posts && <h2 className="category-title">FILM</h2>}
+          {posts && <h2 className="category-title">JAVASCRIPT</h2>}
           <hr />
           <Category />
         </div>
