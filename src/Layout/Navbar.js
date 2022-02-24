@@ -9,7 +9,7 @@ render(){
  <div className="wrap-to-border">
         <div className="navbar-wrap">
         <div className="left-side">
-            <h1 className="logo"><Link to="/">CosMedium</Link></h1>
+            <h1 className="logo"><Link to="/">halilkoca.com</Link></h1>
         </div>
         <div className="right-side">
             <div className="search-wrap">
@@ -17,7 +17,7 @@ render(){
             <Input />
                <SearchList/>
              </div>
-            <Link to="/signin" className="signin">Sign in</Link>
+            <Link to="/signin" className="signin">Giriş yap</Link>
             <Button title={"Get started"} />
         </div>
     </div>

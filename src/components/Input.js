@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
  class Input extends Component {
   render() {
     return (
-        <input type="text"  placeholder="Search.. " className="search-input" value={this.props.input} onChange={this.props.handleInput}/>
+        <input type="text"  placeholder="Ara.. " className="search-input" value={this.props.input} onChange={this.props.handleInput}/>
     )
   }
 }
